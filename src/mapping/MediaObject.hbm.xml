@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="model">
+    <class name="MediaObject" table="MEDIAOBJECT">
+    	<id name="id" column="ID" />        	       		
+        <property name="type" />
+        <property name="users" />
+        <property name="filter" />
+        <property name="tags" />
+        <property name="commentsCount" />
+        <property name="likesCount" />
+        <property name="link" />
+        <property name="userdata" />
+        <property name="creationTime" />
+        <property name="image_link" />                   
+    </class>    
+</hibernate-mapping>

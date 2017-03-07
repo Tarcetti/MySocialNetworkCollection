@@ -2,13 +2,22 @@ package model;
 
 import java.io.Serializable;
 
-public class UserInfo implements Serializable{
+public class UserInfo implements Serializable,IBasicPersistentObject{
 	private String id;
 	private String username;
 	private String full_name;
 	private String profile_picture;
 	private String bio;
 	private String website;
+	
+	public UserInfo(){
+		id = "";
+		username = "";
+		full_name = "";
+		profile_picture = "";
+		bio = "";
+		website = "";
+	}
 	
 	public UserInfo(String id, String username, String full_name, String profile_picture, String bio, String website){
 		this.id = id;

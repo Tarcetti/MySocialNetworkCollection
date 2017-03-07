@@ -23,5 +23,7 @@
     
     <!-- Archivos de mapeo -->
     <mapping resource="mapping/Interest.hbm.xml"/>
+    <mapping resource="mapping/UserInfo.hbm.xml"/>
+    <mapping resource="mapping/MediaObject.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

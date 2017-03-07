@@ -1,7 +1,7 @@
 package model;
 import java.io.Serializable;
 
-public class Interest implements Serializable{
+public class Interest implements Serializable, IBasicPersistentObject{
 	private long id;
 	private String socialNetwork;
 	private String hashtag;
