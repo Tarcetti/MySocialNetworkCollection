@@ -152,11 +152,12 @@ public class Main {
         }        		
         System.out.println("Se han grabado "+list.size()+" UserInfo en la base de datos");
         
-        list = uri.getMediaFromUser("tarcetti");
+        list = uri.getMediaFromUser("tesei");
         for(MediaObject mo : list) 
         { 
             modao.saveBasicPersistentObject(mo); 
-        }        
+        }       
+        
         
 	}
 
