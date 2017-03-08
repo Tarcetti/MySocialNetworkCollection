@@ -44,4 +44,33 @@ public class AccessTokenInstagram extends AccessToken {
 		    System.out.println(pe);			
 		}
 	}
+	
+	public String getUsername(){
+		return username;
+	}
+	
+	public String getBio(){
+		return bio;
+	}
+
+	public String getFull_name(){
+		return full_name;
+	}
+
+	public String getProfile_picture(){
+		return profile_picture;
+	}
+
+	public String getWebsite(){
+		return website;
+	}
+
+	public String getId(){
+		return id;
+	}
+
+	public String getAccess_token(){
+		return access_token;
+	}
+	
 }

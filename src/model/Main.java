@@ -14,8 +14,8 @@ public class Main {
 
 	public static void  main(String[] args){
 		//basicConnection();
-		hibernateConnection();
-		//testWebRequest();
+		//hibernateConnection();
+		testWebRequest();
 	}	
 	
 	private static void basicConnection(){
@@ -133,7 +133,16 @@ public class Main {
 		String scope = "public_content";
 		AccessRequestInstagram ar = new AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
 		ar.getAuthorization();
-		ar.getAccessTokenContent();
+		AccessToken at = ar.getAccessTokenContent();
+		TagRequestInstagram tri = new TagRequestInstagram("https://api.instagram.com/v1",at);
+		ArrayList<MediaObject>list = tri.getMediaFromTag("simpsons");
+		MediaObjectDAO modao = new MediaObjectDAO();
+        for(MediaObject mo : list) 
+        { 
+            modao.saveBasicPersistentObject(mo); 
+        }        
+        System.out.println("Fin");
+		
 				
 	}
 
