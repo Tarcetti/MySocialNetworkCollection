@@ -4,24 +4,19 @@
   "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-  
-    <!-- parametros para la conexion a la base de datos -->
+      
     <property name="connection.driver_class">org.postgresql.Driver</property>       
     <property name="connection.url">jdbc:postgresql://localhost:5432/SocialNetworkCollections</property>    
     <property name="connection.username">postgres</property>
     <property name="connection.password">1</property>
-    
-    <!-- Configuracion del pool interno -->
+        
     <property name="connection.pool_size">1</property>
-    
-    <!-- Dialecto de la base de datos -->
+        
     <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>    
-    
-    <!-- Otras propiedades importantes -->
+        
     <property name="show_sql">false</property>
     <property name="hbm2ddl.auto">create-drop</property>
-    
-    <!-- Archivos de mapeo -->
+        
     <mapping resource="mapping/Interest.hbm.xml"/>
     <mapping resource="mapping/UserInfo.hbm.xml"/>
     <mapping resource="mapping/MediaObject.hbm.xml"/>

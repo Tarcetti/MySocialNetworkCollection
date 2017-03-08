@@ -21,7 +21,7 @@ public class Interest implements Serializable, IBasicPersistentObject{
 		this.id = 0;
 	}
 	
-	public long getId(){
+	public Long getId(){
 		return id;
 	}
 	

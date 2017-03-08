@@ -13,19 +13,23 @@ public abstract class BasicPersistentObjectDAO {
 
 	protected abstract String getFromTable();
 	
+	protected abstract Object getDaoClass();
+	
 	public Serializable saveBasicPersistentObject(IBasicPersistentObject bpo) throws HibernateException {
-		Serializable id;
+		Serializable id = "";
 
-//		try {
-			beginOperation();
-			id = sesion.save(bpo);
-			tx.commit();
-//		} catch (HibernateException he) {			
-//			handleException(he);
-//			throw he;
-//		} finally {
+		try {		
+			if (getBasicPersistentObject(bpo.getId()) == null){
+				beginOperation();
+				id = sesion.save(bpo);
+				tx.commit();
+			}
+		} catch (HibernateException he) {			
+			handleException(he);
+			throw he;
+		} finally {
 			sesion.close();			
-//		}
+		}
 
 		return id;
 	}
@@ -56,11 +60,11 @@ public abstract class BasicPersistentObjectDAO {
 		}
 	}
 
-	public IBasicPersistentObject getBasicPersistentObject(long idBpo) throws HibernateException {
+	public IBasicPersistentObject getBasicPersistentObject(Serializable idBpo) throws HibernateException {
 		IBasicPersistentObject bpo = null;
 		try {
 			beginOperation();
-			bpo = (IBasicPersistentObject) sesion.get(Interest.class, idBpo);
+			bpo = (IBasicPersistentObject) sesion.get((Class)getDaoClass(), idBpo);
 		} finally {
 			sesion.close();
 		}

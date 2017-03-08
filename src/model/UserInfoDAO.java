@@ -7,4 +7,8 @@ public class UserInfoDAO extends BasicPersistentObjectDAO{
 		return "UserInfo";
 	}
 
+	protected Object getDaoClass(){
+		return UserInfo.class;
+	}
+	
 }

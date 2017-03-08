@@ -141,9 +141,23 @@ public class Main {
         { 
             modao.saveBasicPersistentObject(mo); 
         }        
-        System.out.println("Fin");
-		
-				
+        System.out.println("Se han grabado "+list.size()+" MediaObject en la base de datos");
+        
+        UserRequestInstagram uri = new UserRequestInstagram("https://api.instagram.com/v1",at);
+        ArrayList<UserInfo> ulist = uri.getUserInfoFromName("tesei");
+        UserInfoDAO uidao = new UserInfoDAO();
+        for(UserInfo ui : ulist) 
+        { 
+            uidao.saveBasicPersistentObject(ui); 
+        }        		
+        System.out.println("Se han grabado "+list.size()+" UserInfo en la base de datos");
+        
+        list = uri.getMediaFromUser("tarcetti");
+        for(MediaObject mo : list) 
+        { 
+            modao.saveBasicPersistentObject(mo); 
+        }        
+        
 	}
 
 }
