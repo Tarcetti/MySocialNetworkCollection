@@ -93,7 +93,7 @@ public class InstagramUtilsSingleton {
 				String website = jsonObject.get("website").toString();				
 				String bio = jsonObject.get("bio").toString();
 				String username = jsonObject.get("username").toString();				
-				UserInfo user = new UserInfo(id,username,full_name,profile_picture,bio,website);//				
+				UserInfo user = new UserInfo(id,username,full_name,profile_picture,bio,website);				
 				list.add(user);				
 			}
 		}catch(ParseException pe){

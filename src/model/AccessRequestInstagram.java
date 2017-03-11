@@ -81,8 +81,7 @@ public class AccessRequestInstagram extends AccessRequest {
 	}
 	
 	public AccessToken getAccessToken(String accessTokenString){
-		AccessTokenInstagram accessToken = new AccessTokenInstagram();
-		accessToken.readStream(accessTokenString);
+		AccessTokenInstagram accessToken = new AccessTokenInstagram(accessTokenString);		
 		return accessToken;
 	}
 	

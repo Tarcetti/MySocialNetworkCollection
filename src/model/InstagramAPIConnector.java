@@ -9,11 +9,6 @@ import java.util.Properties;
 public class InstagramAPIConnector extends SocialNetworkAPIConnector {
 	Properties properties;
 	public InstagramAPIConnector(){
-		/*this.setSocialNetwork("Instagram");
-		this.setAccessRequestUrl("https://api.instagram.com/oauth");
-		this.setOperationRequestUrl("https://api.instagram.com/v1");
-		this.setClientId("eb502a88f7154f20a4b7a93240e050eb");
-		this.setClientSecret("137a4d1405374563a8852e0ddf997b35");*/
 		InputStream input = null;
 		properties = new Properties();
 		try{
@@ -38,7 +33,6 @@ public class InstagramAPIConnector extends SocialNetworkAPIConnector {
 	}
 	
 	public void AccessRequest(){		
-		//AccessRequestInstagram accessRequest = new AccessRequestInstagram(AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
 		String authurl = this.getAccessRequestUrl()+properties.getProperty("authUrlInstagramEnding"); 
 		String requesturl = this.getAccessRequestUrl()+properties.getProperty("authUrlInstagramAccessEnding");
 		String clientId = this.getClientId();

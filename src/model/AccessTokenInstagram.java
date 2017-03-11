@@ -17,12 +17,19 @@ public class AccessTokenInstagram extends AccessToken {
 	private String id;
 	private String access_token;	
 	
-	public void readStream(String stream){
+	public AccessTokenInstagram(){
+		
+	}
+	
+	public AccessTokenInstagram(String stream){		
+		this.readStream(stream);
+	}
+
+	private void readStream(String stream){
 		JSONParser parser = new JSONParser();
 		try{			
 			Object obj = parser.parse(stream);			
-			JSONObject jsonObject = (JSONObject)obj;
-			Collection values = jsonObject.values();
+			JSONObject jsonObject = (JSONObject)obj;			
 			access_token = jsonObject.get("access_token").toString();
 			JSONObject user = (JSONObject)jsonObject.get("user");
 			username = user.get("username").toString();

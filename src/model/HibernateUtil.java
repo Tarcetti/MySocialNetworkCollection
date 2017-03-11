@@ -10,14 +10,14 @@ public class HibernateUtil
 
     static 
     { 
-//        try 
-//        { 
+        try 
+        { 
             sessionFactory = new Configuration().configure().buildSessionFactory(); 
-//        } catch (HibernateException he) 
-//        { 
-//           System.err.println("Ocurrió un error en la inicialización de la SessionFactory: " + he); 
-//           throw new ExceptionInInitializerError(he); 
-//        } 
+        } catch (HibernateException he) 
+        { 
+           System.err.println("Ocurrió un error en la inicialización de la SessionFactory: " + he); 
+           throw new ExceptionInInitializerError(he); 
+        } 
     }  
 
     public static SessionFactory getSessionFactory() 
