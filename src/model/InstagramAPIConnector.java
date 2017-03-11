@@ -1,27 +1,52 @@
 package model;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class InstagramAPIConnector extends SocialNetworkAPIConnector {
-	
+	Properties properties;
 	public InstagramAPIConnector(){
-		this.setSocialNetwork("Instagram");
+		/*this.setSocialNetwork("Instagram");
 		this.setAccessRequestUrl("https://api.instagram.com/oauth");
 		this.setOperationRequestUrl("https://api.instagram.com/v1");
 		this.setClientId("eb502a88f7154f20a4b7a93240e050eb");
-		this.setClientSecret("137a4d1405374563a8852e0ddf997b35");
+		this.setClientSecret("137a4d1405374563a8852e0ddf997b35");*/
+		InputStream input = null;
+		properties = new Properties();
+		try{
+			input = new FileInputStream("configuration.properties");
+			properties.load(input);
+			this.setSocialNetwork("Instagram");
+			this.setAccessRequestUrl(properties.getProperty("accessRequestUrlInstagram"));
+			this.setOperationRequestUrl(properties.getProperty("operationRequestUrlInstagram"));
+			this.setClientId(properties.getProperty("clientIdInstagram"));
+			this.setClientSecret(properties.getProperty("clientSecretInstagram"));								
+		} catch(IOException ex){
+			ex.printStackTrace();
+		} finally{
+			if(input != null){
+				try{
+					input.close();
+				} catch (IOException e){
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	public void AccessRequest(){		
 		//AccessRequestInstagram accessRequest = new AccessRequestInstagram(AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
-		String authurl = this.getAccessRequestUrl()+"/authorize/"; 
-		String requesturl = this.getAccessRequestUrl()+"/access_token";
+		String authurl = this.getAccessRequestUrl()+properties.getProperty("authUrlInstagramEnding"); 
+		String requesturl = this.getAccessRequestUrl()+properties.getProperty("authUrlInstagramAccessEnding");
 		String clientId = this.getClientId();
 		String secret = this.getClientSecret();
-		String grantType = "authorization_code";
-		String redirect_uri = "http://localhost";
-		String code = "code";				
-		String scope = "public_content";
+		String grantType = properties.getProperty("grantTypeInstagram");
+		String redirect_uri = properties.getProperty("redirectUriInstagram");
+		String code = properties.getProperty("codeInstagram");				
+		String scope = properties.getProperty("scopeInstagram");
 		if (InstagramUtilsSingleton.getInstance().getAccessToken() == null){
 			AccessRequestInstagram accessRequest = new AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
 			accessRequest.getAuthorization();
