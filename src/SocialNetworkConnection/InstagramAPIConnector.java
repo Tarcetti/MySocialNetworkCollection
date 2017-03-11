@@ -1,10 +1,13 @@
-package model;
+package SocialNetworkConnection;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
+
+import model.MediaObject;
+import model.UserInfo;
 
 public class InstagramAPIConnector extends SocialNetworkAPIConnector {
 	Properties properties;

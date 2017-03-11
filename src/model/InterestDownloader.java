@@ -3,6 +3,11 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import DataBaseConnection.IBasicPersistentObject;
+import DataBaseConnection.InterestDAO;
+import SocialNetworkConnection.SocialNetworkAPIConnector;
+import SocialNetworkConnection.SocialNetworkAPIFactory;
+
 public class InterestDownloader {
 	
 	public void downloadInterests(){

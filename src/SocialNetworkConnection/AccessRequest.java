@@ -1,4 +1,4 @@
-package model;
+package SocialNetworkConnection;
 
 import java.awt.Desktop;
 import java.io.BufferedReader;

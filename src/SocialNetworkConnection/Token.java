@@ -1,4 +1,4 @@
-package model;
+package SocialNetworkConnection;
 
 import java.io.Serializable;
 

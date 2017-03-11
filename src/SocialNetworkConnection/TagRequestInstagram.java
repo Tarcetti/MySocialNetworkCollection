@@ -1,4 +1,4 @@
-package model;
+package SocialNetworkConnection;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,6 +7,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import model.MediaObject;
 
 public class TagRequestInstagram extends TagRequest {
 

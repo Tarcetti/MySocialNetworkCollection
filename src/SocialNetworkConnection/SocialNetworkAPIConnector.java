@@ -1,6 +1,11 @@
-package model;
+package SocialNetworkConnection;
 
 import java.util.ArrayList;
+
+import DataBaseConnection.MediaObjectDAO;
+import DataBaseConnection.UserInfoDAO;
+import model.MediaObject;
+import model.UserInfo;
 
 public abstract class SocialNetworkAPIConnector {
 	private String socialNetwork;

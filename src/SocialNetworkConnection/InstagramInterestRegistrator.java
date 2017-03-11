@@ -1,4 +1,6 @@
-package model;
+package SocialNetworkConnection;
+
+import model.InterestRegistrator;
 
 public class InstagramInterestRegistrator extends InterestRegistrator {
 

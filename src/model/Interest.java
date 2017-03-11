@@ -1,6 +1,8 @@
 package model;
 import java.io.Serializable;
 
+import DataBaseConnection.IBasicPersistentObject;
+
 public class Interest implements Serializable, IBasicPersistentObject{
 	private long id;
 	private String socialNetwork;

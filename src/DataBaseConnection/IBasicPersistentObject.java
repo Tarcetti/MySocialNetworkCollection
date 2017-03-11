@@ -1,4 +1,4 @@
-package model;
+package DataBaseConnection;
 
 import java.io.Serializable;
 

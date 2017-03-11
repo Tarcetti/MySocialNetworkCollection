@@ -1,5 +1,6 @@
-package model;
+package DataBaseConnection;
 
+import model.Interest;
 
 public class InterestDAO extends BasicPersistentObjectDAO{
 

@@ -1,5 +1,6 @@
-package model;
+package DataBaseConnection;
 
+import model.UserInfo;
 
 public class UserInfoDAO extends BasicPersistentObjectDAO{
 

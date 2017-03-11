@@ -1,5 +1,6 @@
-package model;
+package DataBaseConnection;
 
+import model.MediaObject;
 
 public class MediaObjectDAO extends BasicPersistentObjectDAO{
 

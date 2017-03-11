@@ -1,4 +1,4 @@
-package model;
+package DataBaseConnection;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory; 

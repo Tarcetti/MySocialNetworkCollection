@@ -1,5 +1,7 @@
 package model;
 
+import DataBaseConnection.InterestDAO;
+
 public abstract class InterestRegistrator {
 	
 	public abstract String getSocialNetwork();	

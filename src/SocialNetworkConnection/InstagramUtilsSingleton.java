@@ -1,4 +1,4 @@
-package model;
+package SocialNetworkConnection;
 
 import java.util.ArrayList;
 
@@ -6,6 +6,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import model.MediaObject;
+import model.UserInfo;
 
 public class InstagramUtilsSingleton {
    private static InstagramUtilsSingleton instance = null;

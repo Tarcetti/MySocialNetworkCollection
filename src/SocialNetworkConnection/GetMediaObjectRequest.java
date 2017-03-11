@@ -1,6 +1,8 @@
-package model;
+package SocialNetworkConnection;
 
 import java.util.ArrayList;
+
+import model.MediaObject;
 
 public abstract class GetMediaObjectRequest extends Request {
 

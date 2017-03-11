@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import DataBaseConnection.IBasicPersistentObject;
+
 public class MediaObject implements Serializable,IBasicPersistentObject{
 	private String id;
 	private String type;

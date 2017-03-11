@@ -1,4 +1,4 @@
-package model;
+package SocialNetworkConnection;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -7,6 +7,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.MediaObject;
 
 public abstract class TagRequest extends GetMediaObjectRequest {
 	private String tagUrl;

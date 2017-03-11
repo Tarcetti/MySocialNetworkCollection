@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import DataBaseConnection.IBasicPersistentObject;
+
 public class UserInfo implements Serializable,IBasicPersistentObject{
 	private String id;
 	private String username;
