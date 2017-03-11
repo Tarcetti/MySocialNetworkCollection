@@ -2,9 +2,6 @@ package SocialNetworkConnection;
 
 import org.json.simple.parser.ParseException;
 
-import java.util.Collection;
-
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 

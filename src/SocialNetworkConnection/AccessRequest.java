@@ -12,7 +12,6 @@ import java.util.Scanner;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 public abstract class AccessRequest extends Request {
@@ -81,7 +80,7 @@ public abstract class AccessRequest extends Request {
 	        	        
 	        System.out.println("Introduzca el código: ");	        
 	        Scanner scanner = new Scanner(System.in);	        
-	        authorizationCode = scanner.nextLine();
+	        authorizationCode = scanner.nextLine();	        
 	        System.out.println("el código es "+authorizationCode);	        	      
 	        	         	      
 	        

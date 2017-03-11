@@ -14,7 +14,6 @@ public abstract class SocialNetworkAPIConnector {
 	private String accessRequestUrl;	
     private String operationRequestUrl = null;            
     private AccessToken accessToken = null;    
-    private static SocialNetworkAPIConnector instance = null;
         
     public abstract void AccessRequest();
         

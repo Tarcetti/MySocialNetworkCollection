@@ -1,8 +1,5 @@
 package SocialNetworkConnection;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class AccessRequestInstagram extends AccessRequest {
 	String client_id;
 	String client_secret;
