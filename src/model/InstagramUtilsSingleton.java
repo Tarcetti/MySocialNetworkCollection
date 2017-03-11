@@ -9,8 +9,17 @@ import org.json.simple.parser.ParseException;
 
 public class InstagramUtilsSingleton {
    private static InstagramUtilsSingleton instance = null;
+   private AccessTokenInstagram token = null;
    
    protected InstagramUtilsSingleton() {      
+   }
+   
+   public AccessToken getAccessToken(){
+	   return token;
+   }
+   
+   public void setAccessToken(AccessTokenInstagram token){
+	   this.token = token;
    }
    
    public static InstagramUtilsSingleton getInstance() {

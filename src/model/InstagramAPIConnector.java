@@ -12,20 +12,25 @@ public class InstagramAPIConnector extends SocialNetworkAPIConnector {
 		this.setClientSecret("137a4d1405374563a8852e0ddf997b35");
 	}
 	
-	public void AccessRequest(){
+	public void AccessRequest(){		
 		//AccessRequestInstagram accessRequest = new AccessRequestInstagram(AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
 		String authurl = this.getAccessRequestUrl()+"/authorize/"; 
-		String requesturl = this.getAccessRequestUrl()+"/oauth/access_token";
+		String requesturl = this.getAccessRequestUrl()+"/access_token";
 		String clientId = this.getClientId();
 		String secret = this.getClientSecret();
 		String grantType = "authorization_code";
 		String redirect_uri = "http://localhost";
 		String code = "code";				
 		String scope = "public_content";
-		AccessRequestInstagram accessRequest = new AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
-		accessRequest.getAuthorization();
-		AccessToken accessToken = accessRequest.getAccessTokenContent();		
-		this.setAccessToken(accessToken);		
+		if (InstagramUtilsSingleton.getInstance().getAccessToken() == null){
+			AccessRequestInstagram accessRequest = new AccessRequestInstagram(requesturl,authurl,clientId,secret,grantType,redirect_uri,code,scope);
+			accessRequest.getAuthorization();
+			AccessToken accessToken = accessRequest.getAccessTokenContent();		
+			this.setAccessToken(accessToken);
+			InstagramUtilsSingleton.getInstance().setAccessToken((AccessTokenInstagram)accessToken);		
+		}else{
+			this.setAccessToken(InstagramUtilsSingleton.getInstance().getAccessToken());
+		}
 	}
 	
 	protected ArrayList<MediaObject> getMediaFromTagInternal(String tag){
@@ -44,6 +49,6 @@ public class InstagramAPIConnector extends SocialNetworkAPIConnector {
 		UserRequestInstagram userRequest = new UserRequestInstagram(this.getOperationRequestUrl(),this.getAccessToken());
 		ArrayList<UserInfo>list = userRequest.getUserInfoFromName(userName);    	
 		return list;    	
-    }
+    }		
 
 }
