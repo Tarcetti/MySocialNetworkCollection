@@ -15,7 +15,12 @@ public class Main {
 	public static void  main(String[] args){
 		//basicConnection();
 		//hibernateConnection();
-		testWebRequest();
+		//testWebRequest();
+		InterestRegistrator registrator = new InstagramInterestRegistrator();
+		registrator.RegisterInterestUser("ines");
+		registrator.RegisterInterestTag("simpsons");
+		InterestDownloader downloader = new InterestDownloader();
+		downloader.downloadInterests();
 	}	
 	
 	private static void basicConnection(){
@@ -113,16 +118,6 @@ public class Main {
     }	
 	
 	private static void testWebRequest(){
-/*		try {
-			URL url = new URL("https://api.instagram.com/oauth/authorize/?client_id=eb502a88f7154f20a4b7a93240e050eb&redirect_uri=http://your-redirect-uri&response_type=code");			
-			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-			String strTemp = "";
-			while (null != (strTemp = br.readLine())) {
-				System.out.println(strTemp);
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}*/
 		String authurl = "https://api.instagram.com/oauth/authorize/";
 		String requesturl = "https://api.instagram.com/oauth/access_token";
 		String clientId = "eb502a88f7154f20a4b7a93240e050eb";
@@ -152,11 +147,13 @@ public class Main {
         }        		
         System.out.println("Se han grabado "+list.size()+" UserInfo en la base de datos");
         
-        list = uri.getMediaFromUser("tesei");
+        list = uri.getMediaFromUser("ines");
         for(MediaObject mo : list) 
         { 
             modao.saveBasicPersistentObject(mo); 
         }       
+        
+        System.out.println("Se encontraron "+list.size()+" MediaObject");
         
         
 	}
