@@ -19,6 +19,7 @@ public class Main {
 		InterestRegistrator registrator = new InstagramInterestRegistrator();
 		registrator.RegisterInterestUser("ines");
 		registrator.RegisterInterestTag("simpsons");
+		registrator.RegisterInterestTag("delicious");
 		InterestDownloader downloader = new InterestDownloader();
 		downloader.downloadInterests();
 	}	
